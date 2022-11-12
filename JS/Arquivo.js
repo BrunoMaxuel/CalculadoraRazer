@@ -8,7 +8,7 @@ function insert(num)
         {
             document.getElementById('painelCalculadora').innerHTML = "";
         }
-        function apagarCaractere()
+        function cleanChar()
         {
             var painel = document.getElementById('painelCalculadora').innerHTML;
             document.getElementById('painelCalculadora').innerHTML = painel.substring(0, painel.length -1);
