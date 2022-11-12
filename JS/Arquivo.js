@@ -15,10 +15,10 @@ function insert(num)
         }
         function calcular()
         {
-            var resultado = document.getElementById('painelCalculadora').innerHTML;
-            if(painelCalculadora)
+            var result = document.getElementById('painelCalculadora').innerHTML;
+            if(result)
             {
-                document.getElementById('painelCalculadora').innerHTML = eval(painelCalculadora);
+                document.getElementById('painelCalculadora').innerHTML = eval(result);
             }
             else
             {
