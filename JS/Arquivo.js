@@ -22,6 +22,6 @@ function insert(num)
             }
             else
             {
-                document.getElementById('painelCalculadora').innerHTML = ""
+                document.getElementById('painelCalculadora').innerHTML = 'nada';
             }
         }
