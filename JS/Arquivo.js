@@ -10,15 +10,15 @@ function insert(num)
         }
         function apagarCaractere()
         {
-            var resultado = document.getElementById('painelCalculadora').innerHTML;
-            document.getElementById('painelCalculadora').innerHTML = resultado.substring(0, resultado.length -1);
+            var painelCalculadora = document.getElementById('painelCalculadora').innerHTML;
+            document.getElementById('painelCalculadora').innerHTML = resultado.substring(0, painelCalculadora.length -1);
         }
         function calcular()
         {
             var resultado = document.getElementById('painelCalculadora').innerHTML;
-            if(resultado)
+            if(painelCalculadora)
             {
-                document.getElementById('painelCalculadora').innerHTML = eval(resultado);
+                document.getElementById('painelCalculadora').innerHTML = eval(painelCalculadora);
             }
             else
             {
