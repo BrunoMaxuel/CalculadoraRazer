@@ -1,27 +1,23 @@
-function insert(num)
-        {
+function insert(num){
             
             var numero = document.getElementById('painelCalculadora').innerHTML;
             document.getElementById('painelCalculadora').innerHTML = numero + num;
-        }
-        function clean()
-        {
-            document.getElementById('painelCalculadora').innerHTML = "";
-        }
-        function backSpace()
-        {
-            var painel = document.getElementById('painelCalculadora').innerHTML;
-            document.getElementById('painelCalculadora').innerHTML = painel.substring(0, painel.length -1);
-        }
-        function calcular()
-        {
-            var result = document.getElementById('painelCalculadora').innerHTML;
-            if(result)
-            {
-                document.getElementById('painelCalculadora').innerHTML = eval(result);
-            }
-            else
-            {
-                document.getElementById('painelCalculadora').innerHTML = 'nada';
-            }
-        }
+}
+function clean(){
+    document.getElementById('painelCalculadora').innerHTML = "";
+}
+function apagarCaractere(){
+    var resultado = document.getElementById('painelCalculadora').innerHTML;
+    document.getElementById('painelCalculadora').innerHTML = resultado.substring(0, resultado.length -1);
+}
+function calcular(){
+    var resultado = document.getElementById('painelCalculadora').innerHTML;
+    if(resultado)
+    {
+        document.getElementById('painelCalculadora').innerHTML = eval(resultado);
+    }
+    else
+    {
+        document.getElementById('painelCalculadora').innerHTML = ""
+    }
+}
