@@ -10,8 +10,8 @@ function insert(num)
         }
         function apagarCaractere()
         {
-            var painelCalculadora = document.getElementById('painelCalculadora').innerHTML;
-            document.getElementById('painelCalculadora').innerHTML = painelCalculadora.substring(0, painelCalculadora.length -1);
+            var painel = document.getElementById('painelCalculadora').innerHTML;
+            document.getElementById('painelCalculadora').innerHTML = painel.substring(0, painel.length -1);
         }
         function calcular()
         {
