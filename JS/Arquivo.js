@@ -8,7 +8,7 @@ function insert(num)
         {
             document.getElementById('painelCalculadora').innerHTML = "";
         }
-        function back()
+        function apagarCaractere()
         {
             var resultado = document.getElementById('painelCalculadora').innerHTML;
             document.getElementById('painelCalculadora').innerHTML = resultado.substring(0, resultado.length -1);
@@ -22,6 +22,6 @@ function insert(num)
             }
             else
             {
-                document.getElementById('painelCalculadora').innerHTML = "Nada..."
+                document.getElementById('painelCalculadora').innerHTML = ""
             }
         }
