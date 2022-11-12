@@ -11,7 +11,7 @@ function insert(num)
         function apagarCaractere()
         {
             var painelCalculadora = document.getElementById('painelCalculadora').innerHTML;
-            document.getElementById('painelCalculadora').innerHTML = resultado.substring(0, painelCalculadora.length -1);
+            document.getElementById('painelCalculadora').innerHTML = painelCalculadora.substring(0, painelCalculadora.length -1);
         }
         function calcular()
         {
