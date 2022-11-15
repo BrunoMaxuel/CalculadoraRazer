@@ -95,13 +95,13 @@ body{
         font-size: 25px;
         background-color: rgba(0, 0, 0, 0.808);
         margin: 0px;
-
+        margin-top: 5px;
         color: rgb(0, 255, 0);
     }
     .painel{
         margin-top: 10px;
         height: 110px;
-        width: 292px;
+        width: 300px;
     }
     .conteinerTeclado div{
         height: 90px;
