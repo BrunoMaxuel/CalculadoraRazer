@@ -5,7 +5,7 @@ body{
 }
 .conteiner{
     width: 420px;
-    height: 600px;
+    height: 570px;
     background-color: rgba(0, 0, 0, 0.87);
     border-radius: 12px;  
     background-image: linear-gradient(-100deg, rgb(2, 255, 2), rgb(0, 0, 0)); 
@@ -24,7 +24,7 @@ body{
 }
 .conteinerTeclado{
     margin: 15px;
-    margin-top: 60px;
+    margin-top: 40px;
     height: 360px;
 }
 .conteinerTeclado button{
@@ -40,4 +40,37 @@ body{
     cursor: pointer;
     background-color: rgb(20, 167, 15);
     color: rgb(0, 0, 0);
+}
+@media only screen and (max-width: 500px) {
+    body{
+        margin: 0px;
+        
+    }
+    .conteiner{
+        width: 100%;
+        height: 100%;
+    }
+    .conteinerTeclado{
+        margin-top: 80px;
+        width: 100%;
+        height: 90%;
+        margin: 20px;
+    }
+    .conteinerTeclado button{
+        width: 85px;
+        height: 90px;
+        border-radius: 5px;
+        font-size: 25px;
+        background-color: rgba(0, 0, 0, 0.808);
+        margin: 2px;
+        margin-top: 20px;
+        color: rgb(0, 255, 0);
+    }
+    .painel{
+        margin: 22px;
+        margin-top: 50px;
+        height: 150px;
+        width: 90%;
+        
+    }
 }
