@@ -99,8 +99,8 @@ body{
         color: rgb(0, 255, 0);
     }
     .painel{
-        margin-top: 35px;
-        height: 150px;
+        margin-top: 10px;
+        height: 120px;
         width: 292px;
     }
     .conteinerTeclado div{
