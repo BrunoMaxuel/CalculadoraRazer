@@ -37,3 +37,4 @@ function calcularPorcent(){
     valorFinal = substring(resultado, -1, -2);
     alert(valorFinal);
 }   
+// commitado com o master
