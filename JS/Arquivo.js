@@ -34,7 +34,7 @@ function calcular(){
 }
 function calcularPorcent(){
     var resultado = document.getElementById('painelCalculadora').innerHTML;
-    valorFinal = substring(resultado, -1, -3);
+    valorFinal = substring(resultado, -1, -2);
     alert(valorFinal);
 }   
-// alteração do secundario
+// commitado com o secundario
