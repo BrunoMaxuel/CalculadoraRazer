@@ -8,8 +8,7 @@ function insert(num){
     }
     if(contador < 2 && painel.length < 13 || painel == null){
         document.getElementById('painelCalculadora').innerHTML += num;
-        if(num == '00'){
-        }
+        
     }
 }
 function clean(){
@@ -23,11 +22,12 @@ function calcular(){
     var resultado = document.getElementById('painelCalculadora').innerHTML;
     if(resultado){
         var resultado = eval(resultado);
-        arrayResultado = resultado.split('.');
-        if(arrayResultado[1] != "00"){
-            document.getElementById('painelCalculadora').innerHTML = parseFloat(resultado.toFixed(2));
+        resultToFixed = resultado.toFixed(2);
+        arrayResultado = resultToFixed.split('.');
+        if(arrayResultado[1] == '00'){
+            document.querySelector('#painelCalculadora').innerHTML = resultado;
         }else{
-            document.getElementById('painelCalculadora').innerHTML = resultado;
+            document.querySelector('#painelCalculadora').innerHTML = resultado.toFixed(2);
         }
     }else{
         document.getElementById('painelCalculadora').innerHTML = ""
@@ -36,22 +36,34 @@ function calcular(){
 function calcularPorcent(){
     var resultado = document.getElementById('painelCalculadora').innerHTML;
     //aqui vai calcular o resultado valor - porcentagem
-    for (let index = 0; index < resultado.length; index++) {
-        
-        if(resultado[index] == '+'){
-            resultado = resultado.split('+');
-            numero1 = parseFloat(resultado[0]);
-            numero2 = parseFloat(resultado[1]);
-            porcent = numero1 * (numero2 /100) + numero1;
+    if(resultado){
+        for (let index = 0; index < resultado.length; index++) {
+            if(resultado[index] == '+'){
+                resultado = resultado.split('+');
+                numero1 = parseFloat(resultado[0]);
+                numero2 = parseFloat(resultado[1]);
+                resultado = numero1 * (numero2 /100) + numero1;
+            }
+            if(resultado[index] == '-'){
+                resultado = resultado.split('-');
+                numero1 = parseFloat(resultado[0]);
+                numero2 = parseFloat(resultado[1]);
+                resultado = numero1 - (numero1 * (numero2 / 100));
+            }
         }
-        if(resultado[index] == '-'){
-            resultado = resultado.split('-');
-            numero1 = parseFloat(resultado[0]);
-            numero2 = parseFloat(resultado[1]);
-            porcent = numero1 - (numero1 * (numero2 / 100));
+        resultado = resultado.toFixed(2);
+        resultado = resultado.toString();
+        resultadoFloat = parseFloat(resultado);
+        resultadoSplit = resultado.split('.');
+        if(resultadoSplit[1] == '00'){
+            document.getElementById('painelCalculadora').innerHTML = resultadoFloat.toFixed(0);
+        }else{
+            document.getElementById('painelCalculadora').innerHTML = resultadoFloat.toFixed(2);
         }
-        
     }
-    
-    document.getElementById('painelCalculadora').innerHTML = porcent.toFixed(2);
 }   
+
+
+//pop remove o final
+//shift remove o primeiro do array
+//push adiciona no final do array igual o append
