@@ -1,22 +1,19 @@
 contador = 0;
-contadorExecution = 1;
 function insert(num){
+    let painel = document.getElementById('painelCalculadora').innerHTML;
     if(num == '-' || num == '+' || num == '/'|| num == '*' || num =='.'){
         contador += 1;
     }else{
         contador = 0;
     }
-    if(contador < 2 && contadorExecution < 13){
+    if(contador < 2 && painel.length < 13 || painel == null){
         document.getElementById('painelCalculadora').innerHTML += num;
-        contadorExecution += 1;
         if(num == '00'){
-            contadorExecution += 1;
         }
     }
 }
 function clean(){
     document.getElementById('painelCalculadora').innerHTML = '';
-    contadorExecution = 1;
 }
 function apagarCaractere(){
     var resultado = document.getElementById('painelCalculadora').innerHTML;
@@ -26,15 +23,35 @@ function calcular(){
     var resultado = document.getElementById('painelCalculadora').innerHTML;
     if(resultado){
         var resultado = eval(resultado);
-        resultado = parseFloat(resultado.toFixed(2));
-        document.getElementById('painelCalculadora').innerHTML = resultado;
+        arrayResultado = resultado.split('.');
+        if(arrayResultado[1] != "00"){
+            document.getElementById('painelCalculadora').innerHTML = parseFloat(resultado.toFixed(2));
+        }else{
+            document.getElementById('painelCalculadora').innerHTML = resultado;
+        }
     }else{
         document.getElementById('painelCalculadora').innerHTML = ""
     }
 }
 function calcularPorcent(){
     var resultado = document.getElementById('painelCalculadora').innerHTML;
-    valorFinal = substring(resultado, -1, -2);
-    alert(valorFinal);
+    //aqui vai calcular o resultado valor - porcentagem
+    for (let index = 0; index < resultado.length; index++) {
+        
+        if(resultado[index] == '+'){
+            resultado = resultado.split('+');
+            numero1 = parseFloat(resultado[0]);
+            numero2 = parseFloat(resultado[1]);
+            porcent = numero1 * (numero2 /100) + numero1;
+        }
+        if(resultado[index] == '-'){
+            resultado = resultado.split('-');
+            numero1 = parseFloat(resultado[0]);
+            numero2 = parseFloat(resultado[1]);
+            porcent = numero1 - (numero1 * (numero2 / 100));
+        }
+        
+    }
+    
+    document.getElementById('painelCalculadora').innerHTML = porcent.toFixed(2);
 }   
-// commitado com o secundario
